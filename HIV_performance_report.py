@@ -4,6 +4,12 @@ from openpyxl import load_workbook
 from pprint import pprint
 import os
 from copy import copy
+from input_colour_function import inp
+from new_kitwise import kit
+from download_input_data import download
+download()
+inp()
+kit()
 
 wb_kitwise = load_workbook(filename='Kitwise.xlsx')
 # kit-wise_sheet_opened
@@ -79,9 +85,9 @@ for sheet in kit_names:
             else:
                 # if(float(result[0][j-10].value)):
                 if (result[0][j - 10].fill.start_color.index == "00000000"):
-                    perfotemp_hiv["L" + str(j)].value = 'Gud boi'
+                    perfotemp_hiv["L" + str(j)].value = 'Satisfactory'
                 else:
-                    perfotemp_hiv["L" + str(j)].value = 'Bad boi'
+                    perfotemp_hiv["L" + str(j)].value = 'Unsatisfactory'
             # except:
             #    pass
             # if(result[0][j-10].value is None):
@@ -94,7 +100,7 @@ for sheet in kit_names:
             perfotemp_hiv["G" + str(j)].value = statees[0][j - 10].value
             perfotemp_hiv["K" + str(j)].value = statees[0][j - 10].value
         try:
-            os.makedirs("D:\\HIV\\Lab_ID_" + str(int(lab_no)))
+            os.makedirs(".\\HIV\\Lab_ID_" + str(int(lab_no)))
         except:
             pass
         if (run == 0):
@@ -102,4 +108,4 @@ for sheet in kit_names:
         else:
             temp_run = run
         wb_perfotemp.save(
-            "D:\\HIV\\Lab_ID_" + str(int(lab_no)) + "\\HIV_" + str(int(lab_no)) + "_Run_" + str(int(temp_run)) + ".xlsx")
+            ".\\HIV\\Lab_ID_" + str(int(lab_no)) + "\\HIV_" + str(int(lab_no)) + "_Run_" + str(int(temp_run)) + ".xlsx")
