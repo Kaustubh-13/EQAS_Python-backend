@@ -1,4 +1,4 @@
-# EQUAS_Python-backend
+# EQAS_Python-backend
 Project Description : Python backend for DATA ANALYSIS on blood-test kit results to check and rate blood-test kits from various blood-banks, under the progression of EQUAS project 
 1. "download_input_data.py" downloads data from the google forms linked to IRCS MUMBAI EQUAS website and stores them in a new excel file as "Input"
 2. Then "input_colour_function.py" color codes the data on "Input" for further analysis
